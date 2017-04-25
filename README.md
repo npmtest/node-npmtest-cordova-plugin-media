@@ -1,6 +1,6 @@
 # npmtest-cordova-plugin-media
 
-#### test coverage for  [cordova-plugin-media (v3.0.0)](https://github.com/apache/cordova-plugin-media#readme)  [![npm package](https://img.shields.io/npm/v/npmtest-cordova-plugin-media.svg?style=flat-square)](https://www.npmjs.org/package/npmtest-cordova-plugin-media) [![travis-ci.org build-status](https://api.travis-ci.org/npmtest/node-npmtest-cordova-plugin-media.svg)](https://travis-ci.org/npmtest/node-npmtest-cordova-plugin-media)
+#### basic test coverage for  [cordova-plugin-media (v3.0.0)](https://github.com/apache/cordova-plugin-media#readme)  [![npm package](https://img.shields.io/npm/v/npmtest-cordova-plugin-media.svg?style=flat-square)](https://www.npmjs.org/package/npmtest-cordova-plugin-media) [![travis-ci.org build-status](https://api.travis-ci.org/npmtest/node-npmtest-cordova-plugin-media.svg)](https://travis-ci.org/npmtest/node-npmtest-cordova-plugin-media)
 
 #### Cordova Media Plugin
 
@@ -10,7 +10,7 @@
 |--:|:--|
 | coverage : | [![istanbul-coverage](https://npmtest.github.io/node-npmtest-cordova-plugin-media/build/coverage.badge.svg)](https://npmtest.github.io/node-npmtest-cordova-plugin-media/build/coverage.html/index.html)|
 | test-report : | [![test-report](https://npmtest.github.io/node-npmtest-cordova-plugin-media/build/test-report.badge.svg)](https://npmtest.github.io/node-npmtest-cordova-plugin-media/build/test-report.html)|
-| build-artifacts : | [![build-artifacts](https://npmtest.github.io/node-npmtest-cordova-plugin-media/glyphicons_144_folder_open.png)](https://github.com/npmtest/node-npmtest-cordova-plugin-media/tree/gh-pages/build)|
+| test-server-github : | [![github.com test-server](https://npmtest.github.io/node-npmtest-cordova-plugin-media/GitHub-Mark-32px.png)](https://npmtest.github.io/node-npmtest-cordova-plugin-media/build/app/index.html) | | build-artifacts : | [![build-artifacts](https://npmtest.github.io/node-npmtest-cordova-plugin-media/glyphicons_144_folder_open.png)](https://github.com/npmtest/node-npmtest-cordova-plugin-media/tree/gh-pages/build)|
 
 - [https://npmtest.github.io/node-npmtest-cordova-plugin-media/build/coverage.html/index.html](https://npmtest.github.io/node-npmtest-cordova-plugin-media/build/coverage.html/index.html)
 
@@ -127,7 +127,8 @@
         "test": "npm run jshint"
     },
     "types": "./types/index.d.ts",
-    "version": "3.0.0"
+    "version": "3.0.0",
+    "bin": {}
 }
 ```
 

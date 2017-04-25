@@ -1,5 +1,5 @@
 <html lang="en"><head>
-    <title>Code coverage report for node-npmtest-cordova-plugin-media/node_modules/cordova-plugin-media/www/MediaError.js</title>
+    <title>Code coverage report for node-npmtest-cordova-plugin-media/node_modules/cordova-plugin-media/src/windows/MediaProxy.js</title>
     <meta charset="utf-8">
     <style>
         body, html {
@@ -192,23 +192,23 @@
     <h1 style="font-weight: bold;">
         <a href="https://github.com/npmtest/node-npmtest-cordova-plugin-media">npmtest-cordova-plugin-media (v0.0.1)</a>
     </h1>
-    <h1>Code coverage report for <span class="entity">node-npmtest-cordova-plugin-media/node_modules/cordova-plugin-media/www/MediaError.js</span></h1>
+    <h1>Code coverage report for <span class="entity">node-npmtest-cordova-plugin-media/node_modules/cordova-plugin-media/src/windows/MediaProxy.js</span></h1>
     <h2>
         
-        Statements: <span class="metric">8.33% <small>(1 / 12)</small></span> &nbsp;&nbsp;&nbsp;&nbsp;
+        Statements: <span class="metric">3.3% <small>(6 / 182)</small></span> &nbsp;&nbsp;&nbsp;&nbsp;
         
         
-        Branches: <span class="metric">0% <small>(0 / 18)</small></span> &nbsp;&nbsp;&nbsp;&nbsp;
+        Branches: <span class="metric">0% <small>(0 / 50)</small></span> &nbsp;&nbsp;&nbsp;&nbsp;
         
         
-        Functions: <span class="metric">0% <small>(0 / 1)</small></span> &nbsp;&nbsp;&nbsp;&nbsp;
+        Functions: <span class="metric">0% <small>(0 / 30)</small></span> &nbsp;&nbsp;&nbsp;&nbsp;
         
         
-        Lines: <span class="metric">8.33% <small>(1 / 12)</small></span> &nbsp;&nbsp;&nbsp;&nbsp;
+        Lines: <span class="metric">3.3% <small>(6 / 182)</small></span> &nbsp;&nbsp;&nbsp;&nbsp;
         
         Ignored: <span class="metric"><span class="ignore-none">none</span></span> &nbsp;&nbsp;&nbsp;&nbsp;
     </h2>
-    <div class="path"><a href="../../../../index.html">All files</a> » <a href="index.html">node-npmtest-cordova-plugin-media/node_modules/cordova-plugin-media/www/</a> » MediaError.js</div>
+    <div class="path"><a href="../../../../../index.html">All files</a> » <a href="index.html">node-npmtest-cordova-plugin-media/node_modules/cordova-plugin-media/src/windows/</a> » MediaProxy.js</div>
 </div>
 <div class="body">
 <pre><table class="coverage">
@@ -268,19 +268,362 @@
 54
 55
 56
-57</td><td class="line-coverage"><span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
+57
+58
+59
+60
+61
+62
+63
+64
+65
+66
+67
+68
+69
+70
+71
+72
+73
+74
+75
+76
+77
+78
+79
+80
+81
+82
+83
+84
+85
+86
+87
+88
+89
+90
+91
+92
+93
+94
+95
+96
+97
+98
+99
+100
+101
+102
+103
+104
+105
+106
+107
+108
+109
+110
+111
+112
+113
+114
+115
+116
+117
+118
+119
+120
+121
+122
+123
+124
+125
+126
+127
+128
+129
+130
+131
+132
+133
+134
+135
+136
+137
+138
+139
+140
+141
+142
+143
+144
+145
+146
+147
+148
+149
+150
+151
+152
+153
+154
+155
+156
+157
+158
+159
+160
+161
+162
+163
+164
+165
+166
+167
+168
+169
+170
+171
+172
+173
+174
+175
+176
+177
+178
+179
+180
+181
+182
+183
+184
+185
+186
+187
+188
+189
+190
+191
+192
+193
+194
+195
+196
+197
+198
+199
+200
+201
+202
+203
+204
+205
+206
+207
+208
+209
+210
+211
+212
+213
+214
+215
+216
+217
+218
+219
+220
+221
+222
+223
+224
+225
+226
+227
+228
+229
+230
+231
+232
+233
+234
+235
+236
+237
+238
+239
+240
+241
+242
+243
+244
+245
+246
+247
+248
+249
+250
+251
+252
+253
+254
+255
+256
+257
+258
+259
+260
+261
+262
+263
+264
+265
+266
+267
+268
+269
+270
+271
+272
+273
+274
+275
+276
+277
+278
+279
+280
+281
+282
+283
+284
+285
+286
+287
+288
+289
+290
+291
+292
+293
+294
+295
+296
+297
+298
+299
+300
+301
+302
+303
+304
+305
+306
+307
+308
+309
+310
+311
+312
+313
+314
+315
+316
+317
+318
+319
+320
+321
+322
+323
+324
+325
+326
+327
+328
+329
+330
+331
+332
+333
+334
+335
+336
+337
+338
+339
+340
+341
+342
+343
+344
+345
+346
+347
+348
+349
+350
+351
+352
+353
+354
+355
+356
+357
+358
+359
+360
+361
+362
+363
+364
+365
+366
+367
+368
+369
+370
+371
+372
+373
+374
+375
+376
+377
+378
+379
+380
+381
+382
+383
+384
+385
+386
+387
+388
+389
+390
+391
+392
+393
+394
+395
+396
+397
+398
+399
+400
+401
+402
+403
+404
+405
+406
+407
+408
+409
+410
+411
+412</td><td class="line-coverage"><span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -304,6 +647,189 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">2</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
@@ -311,6 +837,65 @@
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
@@ -319,8 +904,133 @@
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -345,46 +1055,401 @@
  *
 */
 &nbsp;
+/*global Windows:true */
+&nbsp;
+var Media = require('cordova-plugin-media.Media');
+<span class="cstat-no" title="statement not covered">var MediaError = require('cordova-plugin-media.MediaError');</span>
+&nbsp;
+<span class="cstat-no" title="statement not covered">var recordedFile;</span>
+<span class="cstat-no" title="statement not covered">var tempFolderAppDataBasePath = 'ms-appdata:///temp/',</span>
+    localFolderAppDataBasePath = 'ms-appdata:///local/',
+    tempFolderFullPath = Windows.Storage.ApplicationData.current.temporaryFolder.path,
+    localFolderFullPath = Windows.Storage.ApplicationData.current.localFolder.path;
+&nbsp;
+<span class="cstat-no" title="statement not covered">var PARAMETER_IS_INCORRECT = -2147024809;</span>
+<span class="cstat-no" title="statement not covered">var SUPPORTED_EXTENSIONS = ['.mp3', '.wma', '.wav', '.cda', '.adx', '.wm', '.m3u', '.wmx', '.m4a'];</span>
+<span class="cstat-no" title="statement not covered">var SUPPORTED_PREFIXES = ['http', 'https', 'rstp'];</span>
+&nbsp;
+<span class="cstat-no" title="statement not covered">var fsTypes = {</span>
+    PERSISTENT: 'PERSISTENT',
+    TEMPORARY: 'TEMPORARY'
+};
+&nbsp;
+<span class="cstat-no" title="statement not covered">module.exports = {</span>
+    mediaCaptureMrg:null,
+&nbsp;
+    // Initiates the audio file
+    create:<span class="fstat-no" title="function not covered">function(win, lose, args) {</span>
+<span class="cstat-no" title="statement not covered">        var id = args[0];</span>
+&nbsp;
+<span class="cstat-no" title="statement not covered">        var srcUri = processUri(args[1]);</span>
+&nbsp;
+<span class="cstat-no" title="statement not covered">        var createAudioNode = !!args[2];</span>
+<span class="cstat-no" title="statement not covered">        var thisM = Media.get(id);</span>
+&nbsp;
+<span class="cstat-no" title="statement not covered">        Media.prototype.node = null;</span>
+&nbsp;
+<span class="cstat-no" title="statement not covered">        var prefix = args[1].split(':').shift();</span>
+<span class="cstat-no" title="statement not covered">        var extension = srcUri.extension;</span>
+<span class="cstat-no" title="statement not covered">        if (thisM.node === null) {</span>
+<span class="cstat-no" title="statement not covered">            if (SUPPORTED_EXTENSIONS.indexOf(extension) === -1 &amp;&amp; SUPPORTED_PREFIXES.indexOf(prefix) === -1) {</span>
+<span class="cstat-no" title="statement not covered">                if (lose) {</span>
+<span class="cstat-no" title="statement not covered">                    lose({ code: MediaError.MEDIA_ERR_ABORTED });</span>
+                }
+<span class="cstat-no" title="statement not covered">                return false; </span>// unable to create
+            }
+&nbsp;
+            // Don't create Audio object in case of record mode
+<span class="cstat-no" title="statement not covered">            if (createAudioNode === true) {</span>
+<span class="cstat-no" title="statement not covered">                thisM.node = new Audio();</span>
+<span class="cstat-no" title="statement not covered">                thisM.node.msAudioCategory = "BackgroundCapableMedia";</span>
+<span class="cstat-no" title="statement not covered">                thisM.node.src = srcUri.absoluteCanonicalUri;</span>
+&nbsp;
+<span class="cstat-no" title="statement not covered">                thisM.node.onloadstart = <span class="fstat-no" title="function not covered">function () {</span></span>
+<span class="cstat-no" title="statement not covered">                    Media.onStatus(id, Media.MEDIA_STATE, Media.MEDIA_STARTING);</span>
+                };
+&nbsp;
+<span class="cstat-no" title="statement not covered">                thisM.node.ontimeupdate = <span class="fstat-no" title="function not covered">function (e) {</span></span>
+<span class="cstat-no" title="statement not covered">                    Media.onStatus(id, Media.MEDIA_POSITION, e.target.currentTime);</span>
+                };
+&nbsp;
+<span class="cstat-no" title="statement not covered">                thisM.node.onplaying = <span class="fstat-no" title="function not covered">function () {</span></span>
+<span class="cstat-no" title="statement not covered">                    Media.onStatus(id, Media.MEDIA_STATE, Media.MEDIA_RUNNING);</span>
+                };
+&nbsp;
+<span class="cstat-no" title="statement not covered">                thisM.node.ondurationchange = <span class="fstat-no" title="function not covered">function (e) {</span></span>
+<span class="cstat-no" title="statement not covered">                    Media.onStatus(id, Media.MEDIA_DURATION, e.target.duration || -1);</span>
+                };
+&nbsp;
+<span class="cstat-no" title="statement not covered">                thisM.node.onerror = <span class="fstat-no" title="function not covered">function (e) {</span></span>
+                    // Due to media.spec.15 It should return MediaError for bad filename
+<span class="cstat-no" title="statement not covered">                    var err = e.target.error.code === MediaError.MEDIA_ERR_SRC_NOT_SUPPORTED ?</span>
+                        { code: MediaError.MEDIA_ERR_ABORTED } :
+                        e.target.error;
+&nbsp;
+<span class="cstat-no" title="statement not covered">                    Media.onStatus(id, Media.MEDIA_ERROR, err);</span>
+                };
+&nbsp;
+<span class="cstat-no" title="statement not covered">                thisM.node.onended = <span class="fstat-no" title="function not covered">function () {</span></span>
+<span class="cstat-no" title="statement not covered">                    Media.onStatus(id, Media.MEDIA_STATE, Media.MEDIA_STOPPED);</span>
+                };
+            }
+        }
+&nbsp;
+<span class="cstat-no" title="statement not covered">        return true; </span>// successfully created
+    },
+&nbsp;
+    // Start playing the audio
+    startPlayingAudio:<span class="fstat-no" title="function not covered">function(win, lose, args) {</span>
+<span class="cstat-no" title="statement not covered">        var id = args[0];</span>
+        //var src = args[1];
+        //var options = args[2];
+&nbsp;
+<span class="cstat-no" title="statement not covered">        var thisM = Media.get(id);</span>
+        // if Media was released, then node will be null and we need to create it again
+<span class="cstat-no" title="statement not covered">        if (!thisM.node) {</span>
+<span class="cstat-no" title="statement not covered">            args[2] = true; </span>// Setting createAudioNode to true
+<span class="cstat-no" title="statement not covered">            if (!module.exports.create(win, lose, args)) {</span>
+                // there is no reason to continue if we can't create media
+                // corresponding callback has been invoked in create so we don't need to call it here
+<span class="cstat-no" title="statement not covered">                return;</span>
+            }
+        }
+&nbsp;
+<span class="cstat-no" title="statement not covered">        try {</span>
+<span class="cstat-no" title="statement not covered">            thisM.node.play();</span>
+        } catch (err) {
+<span class="cstat-no" title="statement not covered">            if (lose) {</span>
+<span class="cstat-no" title="statement not covered">                lose({code:MediaError.MEDIA_ERR_ABORTED});</span>
+            }
+        }
+    },
+&nbsp;
+    // Stops the playing audio
+    stopPlayingAudio:<span class="fstat-no" title="function not covered">function(win, lose, args) {</span>
+<span class="cstat-no" title="statement not covered">        var id = args[0];</span>
+<span class="cstat-no" title="statement not covered">        try {</span>
+<span class="cstat-no" title="statement not covered">            var thisM = Media.get(id);</span>
+<span class="cstat-no" title="statement not covered">            thisM.node.pause();</span>
+<span class="cstat-no" title="statement not covered">            thisM.node.currentTime = 0;</span>
+<span class="cstat-no" title="statement not covered">            Media.onStatus(id, Media.MEDIA_STATE, Media.MEDIA_STOPPED);</span>
+        } catch (err) {
+<span class="cstat-no" title="statement not covered">            lose("Failed to stop: "+err);</span>
+        }
+    },
+&nbsp;
+    // Seeks to the position in the audio
+    seekToAudio:<span class="fstat-no" title="function not covered">function(win, lose, args) {</span>
+<span class="cstat-no" title="statement not covered">        var id = args[0];</span>
+<span class="cstat-no" title="statement not covered">        var milliseconds = args[1];</span>
+<span class="cstat-no" title="statement not covered">        var thisM = Media.get(id);</span>
+<span class="cstat-no" title="statement not covered">        try {</span>
+<span class="cstat-no" title="statement not covered">            thisM.node.currentTime = milliseconds / 1000;</span>
+<span class="cstat-no" title="statement not covered">            win(thisM.node.currentTime);</span>
+        } catch (err) {
+<span class="cstat-no" title="statement not covered">            lose("Failed to seek: "+err);</span>
+        }
+    },
+&nbsp;
+    // Pauses the playing audio
+    pausePlayingAudio:<span class="fstat-no" title="function not covered">function(win, lose, args) {</span>
+<span class="cstat-no" title="statement not covered">        var id = args[0];</span>
+<span class="cstat-no" title="statement not covered">        var thisM = Media.get(id);</span>
+<span class="cstat-no" title="statement not covered">        try {</span>
+<span class="cstat-no" title="statement not covered">            thisM.node.pause();</span>
+<span class="cstat-no" title="statement not covered">            Media.onStatus(id, Media.MEDIA_STATE, Media.MEDIA_PAUSED);</span>
+        } catch (err) {
+<span class="cstat-no" title="statement not covered">            lose("Failed to pause: "+err);</span>
+        }
+    },
+&nbsp;
+    // Gets current position in the audio
+    getCurrentPositionAudio:<span class="fstat-no" title="function not covered">function(win, lose, args) {</span>
+<span class="cstat-no" title="statement not covered">        var id = args[0];</span>
+<span class="cstat-no" title="statement not covered">        try {</span>
+<span class="cstat-no" title="statement not covered">            var p = (Media.get(id)).node.currentTime;</span>
+<span class="cstat-no" title="statement not covered">            win(p);</span>
+        } catch (err) {
+<span class="cstat-no" title="statement not covered">            lose(err);</span>
+        }
+    },
+&nbsp;
+    // Start recording audio
+    startRecordingAudio:<span class="fstat-no" title="function not covered">function(win, lose, args) {</span>
+<span class="cstat-no" title="statement not covered">        var id = args[0];</span>
+<span class="cstat-no" title="statement not covered">        var srcUri = processUri(args[1]);</span>
+&nbsp;
+<span class="cstat-no" title="statement not covered">        var dest = parseUriToPathAndFilename(srcUri);</span>
+<span class="cstat-no" title="statement not covered">        var destFileName = dest.fileName;</span>
+&nbsp;
+<span class="cstat-no" title="statement not covered">        var success = <span class="fstat-no" title="function not covered">function () {</span></span>
+<span class="cstat-no" title="statement not covered">            Media.onStatus(id, Media.MEDIA_STATE, Media.MEDIA_RUNNING);</span>
+        };
+&nbsp;
+<span class="cstat-no" title="statement not covered">        var error = <span class="fstat-no" title="function not covered">function (reason) {</span></span>
+<span class="cstat-no" title="statement not covered">            Media.onStatus(id, Media.MEDIA_ERROR, reason);</span>
+        };
+&nbsp;
+        // Initialize device
+<span class="cstat-no" title="statement not covered">        Media.prototype.mediaCaptureMgr = null;</span>
+<span class="cstat-no" title="statement not covered">        var thisM = (Media.get(id));</span>
+<span class="cstat-no" title="statement not covered">        var captureInitSettings = new Windows.Media.Capture.MediaCaptureInitializationSettings();</span>
+<span class="cstat-no" title="statement not covered">        captureInitSettings.streamingCaptureMode = Windows.Media.Capture.StreamingCaptureMode.audio;</span>
+<span class="cstat-no" title="statement not covered">        thisM.mediaCaptureMgr = new Windows.Media.Capture.MediaCapture();</span>
+<span class="cstat-no" title="statement not covered">        thisM.mediaCaptureMgr.addEventListener("failed", error);</span>
+&nbsp;
+<span class="cstat-no" title="statement not covered">        thisM.mediaCaptureMgr.initializeAsync(captureInitSettings).done(<span class="fstat-no" title="function not covered">function (result) {</span></span>
+<span class="cstat-no" title="statement not covered">            thisM.mediaCaptureMgr.addEventListener("recordlimitationexceeded", error);</span>
+<span class="cstat-no" title="statement not covered">            thisM.mediaCaptureMgr.addEventListener("failed", error);</span>
+&nbsp;
+            // Start recording
+<span class="cstat-no" title="statement not covered">            Windows.Storage.ApplicationData.current.temporaryFolder.createFileAsync(destFileName, Windows.Storage.CreationCollisionOption.replaceExisting).done(<span class="fstat-no" title="function not covered">function (newFile) {</span></span>
+<span class="cstat-no" title="statement not covered">                recordedFile = newFile;</span>
+<span class="cstat-no" title="statement not covered">                var encodingProfile = null;</span>
+<span class="cstat-no" title="statement not covered">                switch (newFile.fileType) {</span>
+                    case '.m4a':
+<span class="cstat-no" title="statement not covered">                        encodingProfile = Windows.Media.MediaProperties.MediaEncodingProfile.createM4a(Windows.Media.MediaProperties.AudioEncodingQuality.auto);</span>
+<span class="cstat-no" title="statement not covered">                        break;</span>
+                    case '.mp3':
+<span class="cstat-no" title="statement not covered">                        encodingProfile = Windows.Media.MediaProperties.MediaEncodingProfile.createMp3(Windows.Media.MediaProperties.AudioEncodingQuality.auto);</span>
+<span class="cstat-no" title="statement not covered">                        break;</span>
+                    case '.wma':
+<span class="cstat-no" title="statement not covered">                        encodingProfile = Windows.Media.MediaProperties.MediaEncodingProfile.createWma(Windows.Media.MediaProperties.AudioEncodingQuality.auto);</span>
+<span class="cstat-no" title="statement not covered">                        break;</span>
+                    default:
+<span class="cstat-no" title="statement not covered">                        error("Invalid file type for record");</span>
+<span class="cstat-no" title="statement not covered">                        break;</span>
+                }
+<span class="cstat-no" title="statement not covered">                thisM.mediaCaptureMgr.startRecordToStorageFileAsync(encodingProfile, newFile).done(success, error);</span>
+            }, error);
+        }, error);
+    },
+&nbsp;
+    // Stop recording audio
+    stopRecordingAudio:<span class="fstat-no" title="function not covered">function(win, lose, args) {</span>
+<span class="cstat-no" title="statement not covered">        var id = args[0];</span>
+<span class="cstat-no" title="statement not covered">        var thisM = Media.get(id);</span>
+<span class="cstat-no" title="statement not covered">        var srcUri = processUri(thisM.src);</span>
+&nbsp;
+<span class="cstat-no" title="statement not covered">        var dest = parseUriToPathAndFilename(srcUri);</span>
+<span class="cstat-no" title="statement not covered">        var destPath = dest.path;</span>
+<span class="cstat-no" title="statement not covered">        var destFileName = dest.fileName;</span>
+<span class="cstat-no" title="statement not covered">        var fsType = dest.fsType;</span>
+&nbsp;
+<span class="cstat-no" title="statement not covered">        var success = <span class="fstat-no" title="function not covered">function () {</span></span>
+<span class="cstat-no" title="statement not covered">            Media.onStatus(id, Media.MEDIA_STATE, Media.MEDIA_STOPPED);</span>
+        };
+&nbsp;
+<span class="cstat-no" title="statement not covered">        var error = <span class="fstat-no" title="function not covered">function (reason) {</span></span>
+<span class="cstat-no" title="statement not covered">            Media.onStatus(id, Media.MEDIA_ERROR, reason);</span>
+        };
+&nbsp;
+<span class="cstat-no" title="statement not covered">        thisM.mediaCaptureMgr.stopRecordAsync().done(<span class="fstat-no" title="function not covered">function () {</span></span>
+<span class="cstat-no" title="statement not covered">            if (fsType === fsTypes.TEMPORARY) {</span>
+<span class="cstat-no" title="statement not covered">                if (!destPath) {</span>
+                    // if path is not defined, we leave recorded file in temporary folder (similar to iOS)
+<span class="cstat-no" title="statement not covered">                    success();</span>
+                } else {
+<span class="cstat-no" title="statement not covered">                    Windows.Storage.ApplicationData.current.temporaryFolder.getFolderAsync(destPath).done(<span class="fstat-no" title="function not covered">function (destFolder) {</span></span>
+<span class="cstat-no" title="statement not covered">                        recordedFile.copyAsync(destFolder, destFileName, Windows.Storage.CreationCollisionOption.replaceExisting).done(success, error);</span>
+                    }, error);
+                }
+            } else {
+                // Copying file to persistent storage
+<span class="cstat-no" title="statement not covered">                if (!destPath) {</span>
+<span class="cstat-no" title="statement not covered">                    recordedFile.copyAsync(Windows.Storage.ApplicationData.current.localFolder, destFileName, Windows.Storage.CreationCollisionOption.replaceExisting).done(success, error);</span>
+                } else {
+<span class="cstat-no" title="statement not covered">                    Windows.Storage.ApplicationData.current.localFolder.getFolderAsync(destPath).done(<span class="fstat-no" title="function not covered">function (destFolder) {</span></span>
+<span class="cstat-no" title="statement not covered">                        recordedFile.copyAsync(destFolder, destFileName, Windows.Storage.CreationCollisionOption.replaceExisting).done(success, error);</span>
+                    }, error);
+                }
+            }
+        }, error);
+    },
+&nbsp;
+    // Release the media object
+    release:<span class="fstat-no" title="function not covered">function(win, lose, args) {</span>
+<span class="cstat-no" title="statement not covered">        var id = args[0];</span>
+<span class="cstat-no" title="statement not covered">        var thisM = Media.get(id);</span>
+<span class="cstat-no" title="statement not covered">        try {</span>
+<span class="cstat-no" title="statement not covered">            if (thisM.node) {</span>
+<span class="cstat-no" title="statement not covered">                thisM.node.onloadedmetadata = null;</span>
+                // Unsubscribing as the media object is being released
+<span class="cstat-no" title="statement not covered">                thisM.node.onerror = null;</span>
+                // Needed to avoid "0x80070005 - JavaScript runtime error: Access is denied." on copyAsync
+<span class="cstat-no" title="statement not covered">                thisM.node.src = null;</span>
+<span class="cstat-no" title="statement not covered">                delete thisM.node;</span>
+            }
+        } catch (err) {
+<span class="cstat-no" title="statement not covered">            lose("Failed to release: "+err);</span>
+        }
+    },
+    setVolume:<span class="fstat-no" title="function not covered">function(win, lose, args) {</span>
+<span class="cstat-no" title="statement not covered">        var id = args[0];</span>
+<span class="cstat-no" title="statement not covered">        var volume = args[1];</span>
+<span class="cstat-no" title="statement not covered">        var thisM = Media.get(id);</span>
+<span class="cstat-no" title="statement not covered">        thisM.volume = volume;</span>
+    }
+};
+&nbsp;
 /**
- * This class contains information about any Media errors.
-*/
-/*
- According to :: http://dev.w3.org/html5/spec-author-view/video.html#mediaerror
- We should never be creating these objects, we should just implement the interface
- which has 1 property for an instance, 'code'
-&nbsp;
- instead of doing :
-    errorCallbackFunction( new MediaError(3,'msg') );
-we should simply use a literal :
-    errorCallbackFunction( {'code':3} );
+ * Converts a path to Windows.Foundation.Uri basing on App data temporary folder 
+ * if scheme is not defined, e.g.: path/to/file.m4a -&gt; ms-appdata:///temp/path/to/file.m4a
+ * @param  {String} src Input path
+ * @return {Object}     Windows.Foundation.Uri
  */
+<span class="fstat-no" title="function not covered">function setTemporaryFsByDefault(src) {</span>
+<span class="cstat-no" title="statement not covered">    var uri;</span>
+<span class="cstat-no" title="statement not covered">    try {</span>
+<span class="cstat-no" title="statement not covered">        uri = new Windows.Foundation.Uri(src);</span>
+    } catch (e) {
+<span class="cstat-no" title="statement not covered">        if (e.number === PARAMETER_IS_INCORRECT) {</span>
+            // Use TEMPORARY fs there is no 'scheme:'
+<span class="cstat-no" title="statement not covered">            uri = new Windows.Foundation.Uri(tempFolderAppDataBasePath, src);</span>
+        } else {
+<span class="cstat-no" title="statement not covered">            throw e;</span>
+        }
+    } finally {
+<span class="cstat-no" title="statement not covered">        return uri;</span>
+    }
+}
 &nbsp;
- var _MediaError = window.MediaError;
+/**
+ * Convert native full path to ms-appdata path
+ * @param  {Object} uri Windows.Foundation.Uri
+ * @return {Object}     ms-appdata Windows.Foundation.Uri
+ */
+<span class="fstat-no" title="function not covered">function fullPathToAppData(uri) {</span>
+<span class="cstat-no" title="statement not covered">    if (uri.schemeName === 'file') {</span>
+<span class="cstat-no" title="statement not covered">        if (uri.rawUri.indexOf(Windows.Storage.ApplicationData.current.localFolder.path) !== -1) {</span>
+            // Also remove path' beginning slash to avoid losing folder name part
+<span class="cstat-no" title="statement not covered">            uri = new Windows.Foundation.Uri(localFolderAppDataBasePath, uri.rawUri.replace(localFolderFullPath, '').replace(/^[\\\/]{1,2}/, ''));</span>
+        } else <span class="cstat-no" title="statement not covered">if (uri.rawUri.indexOf(Windows.Storage.ApplicationData.current.temporaryFolder.path) !== -1) {</span>
+<span class="cstat-no" title="statement not covered">            uri = new Windows.Foundation.Uri(tempFolderAppDataBasePath, uri.rawUri.replace(tempFolderFullPath, '').replace(/^[\\\/]{1,2}/, ''));</span>
+        } else {
+<span class="cstat-no" title="statement not covered">            throw new Error('Not supported file uri: ' + uri.rawUri);</span>
+        }
+    }
 &nbsp;
+<span class="cstat-no" title="statement not covered">    return uri;</span>
+}
 &nbsp;
-<span class="cstat-no" title="statement not covered">if(!_MediaError) {</span>
-<span class="cstat-no" title="statement not covered">    window.MediaError = _MediaError = <span class="fstat-no" title="function not covered">function(code, msg) {</span></span>
-<span class="cstat-no" title="statement not covered">        this.code = (typeof code != 'undefined') ? code : null;</span>
-<span class="cstat-no" title="statement not covered">        this.message = msg || ""; </span>// message is NON-standard! do not use!
+/**
+ * Converts cdvfile paths to ms-appdata path
+ * @param  {Object} uri Input cdvfile scheme Windows.Foundation.Uri
+ * @return {Object}     Windows.Foundation.Uri based on App data path
+ */
+<span class="fstat-no" title="function not covered">function cdvfileToAppData(uri) {</span>
+<span class="cstat-no" title="statement not covered">    var cdvFsRoot;</span>
+&nbsp;
+<span class="cstat-no" title="statement not covered">    if (uri.schemeName === 'cdvfile') {</span>
+<span class="cstat-no" title="statement not covered">        cdvFsRoot = uri.path.split('/')[1];</span>
+<span class="cstat-no" title="statement not covered">        if (cdvFsRoot === 'temporary') {</span>
+<span class="cstat-no" title="statement not covered">            return new Windows.Foundation.Uri(tempFolderAppDataBasePath, uri.path.split('/').slice(2).join('/'));</span>
+        } else <span class="cstat-no" title="statement not covered">if (cdvFsRoot === 'persistent') {</span>
+<span class="cstat-no" title="statement not covered">            return new Windows.Foundation.Uri(localFolderAppDataBasePath, uri.path.split('/').slice(2).join('/'));</span>
+        } else {
+<span class="cstat-no" title="statement not covered">            throw new Error(cdvFsRoot + ' cdvfile root is not supported on Windows');</span>
+        }
+    }
+&nbsp;
+<span class="cstat-no" title="statement not covered">    return uri;</span>
+}
+&nbsp;
+/**
+ * Prepares media src for internal usage
+ * @param  {String} src Input media path
+ * @return {Object}     Windows.Foundation.Uri
+ */
+<span class="fstat-no" title="function not covered">function processUri(src) {</span>
+    // Collapse double slashes (File plugin issue): ms-appdata:///temp//recs/memos/media.m4a =&gt; ms-appdata:///temp/recs/memos/media.m4a
+<span class="cstat-no" title="statement not covered">    src = src.replace(/([^\/:])(\/\/)([^\/])/g, '$1/$3');</span>
+&nbsp;
+    // Remove beginning slashes
+<span class="cstat-no" title="statement not covered">    src = src.replace(/^[\\\/]{1,2}/, '');</span>
+&nbsp;
+<span class="cstat-no" title="statement not covered">    var uri = setTemporaryFsByDefault(src);</span>
+&nbsp;
+<span class="cstat-no" title="statement not covered">    uri = fullPathToAppData(uri);</span>
+<span class="cstat-no" title="statement not covered">    uri = cdvfileToAppData(uri);</span>
+&nbsp;
+<span class="cstat-no" title="statement not covered">    return uri;</span>
+}
+&nbsp;
+/**
+ * Extracts path, filename and filesystem type from Uri
+ * @param  {Object} uri Windows.Foundation.Uri
+ * @return {Object}     Object containing path, filename and filesystem type
+ */
+<span class="fstat-no" title="function not covered">function parseUriToPathAndFilename(uri) {</span>
+    // Removing scheme and location, using backslashes: ms-appdata:///local/path/to/file.m4a -&gt; path\\to\\file.m4a
+<span class="cstat-no" title="statement not covered">    var normalizedSrc = uri.path.split('/').slice(2).join('\\');</span>
+&nbsp;
+<span class="cstat-no" title="statement not covered">    var path = normalizedSrc.substr(0, normalizedSrc.lastIndexOf('\\'));</span>
+<span class="cstat-no" title="statement not covered">    var fileName = normalizedSrc.replace(path + '\\', '');</span>
+&nbsp;
+<span class="cstat-no" title="statement not covered">    var fsType;</span>
+&nbsp;
+<span class="cstat-no" title="statement not covered">    if (uri.path.split('/')[1] === 'local') {</span>
+<span class="cstat-no" title="statement not covered">        fsType = fsTypes.PERSISTENT;</span>
+    } else <span class="cstat-no" title="statement not covered">if (uri.path.split('/')[1] === 'temp') {</span>
+<span class="cstat-no" title="statement not covered">        fsType = fsTypes.TEMPORARY;</span>
+    }
+&nbsp;
+<span class="cstat-no" title="statement not covered">    return {</span>
+        path: path,
+        fileName: fileName,
+        fsType: fsType
     };
 }
 &nbsp;
-<span class="cstat-no" title="statement not covered">_MediaError.MEDIA_ERR_NONE_ACTIVE    = _MediaError.MEDIA_ERR_NONE_ACTIVE    || 0;</span>
-<span class="cstat-no" title="statement not covered">_MediaError.MEDIA_ERR_ABORTED        = _MediaError.MEDIA_ERR_ABORTED        || 1;</span>
-<span class="cstat-no" title="statement not covered">_MediaError.MEDIA_ERR_NETWORK        = _MediaError.MEDIA_ERR_NETWORK        || 2;</span>
-<span class="cstat-no" title="statement not covered">_MediaError.MEDIA_ERR_DECODE         = _MediaError.MEDIA_ERR_DECODE         || 3;</span>
-<span class="cstat-no" title="statement not covered">_MediaError.MEDIA_ERR_NONE_SUPPORTED = _MediaError.MEDIA_ERR_NONE_SUPPORTED || 4;</span>
-// TODO: MediaError.MEDIA_ERR_NONE_SUPPORTED is legacy, the W3 spec now defines it as below.
-// as defined by http://dev.w3.org/html5/spec-author-view/video.html#error-codes
-<span class="cstat-no" title="statement not covered">_MediaError.MEDIA_ERR_SRC_NOT_SUPPORTED = _MediaError.MEDIA_ERR_SRC_NOT_SUPPORTED || 4;</span>
-&nbsp;
-<span class="cstat-no" title="statement not covered">module.exports = _MediaError;</span>
+<span class="cstat-no" title="statement not covered">require("cordova/exec/proxy").add("Media",module.exports);</span>
 &nbsp;
 &nbsp;</pre></td></tr>
 </tbody></table></pre>
 </div>
 <div class="footer">
-    <div class="meta">Generated by <a href="https://github.com/kaizhu256/node-utility2" target="_blank">utility2</a> at Tue Apr 18 2017 09:44:49 GMT+0000 (UTC)</div>
+    <div class="meta">Generated by <a href="https://github.com/kaizhu256/node-utility2" target="_blank">utility2</a> at Tue Apr 25 2017 05:59:05 GMT+0000 (UTC)</div>
 </div>
 
 
